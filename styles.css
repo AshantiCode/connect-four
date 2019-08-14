@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Crafty+Girls");
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Crafty Girls", cursive;
+	background-color: #fae3c6;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 90vh;
+}
+
+.sides {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 20vw;
+	height: 80vh;
+}
+
+h1 {
+	color: #533b4d;
+	margin-right: 5rem;
+	width: 150px;
+	font-size: 3.5rem;
+	text-align: left;
+}
+
+h2 {
+	text-align: center;
+	color: #533b4d;
+}
+
+.board {
+	display: inline-block;
+	max-height: 560px;
+	background-color: #faa4bd;
+	white-space: nowrap;
+	box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.6);
+	/*prevents from breaking the line ;)*/
+}
+
+.currentPlayer-info {
+	padding-top: 1.12rem;
+	color: #533b4d;
+	font-size: 3rem;
+	text-align: center;
+	border-radius: 30px;
+	flex-grow: 3;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	2% {
+		transform: translate(20px);
+	}
+
+	4% {
+		transform: translate(-20px);
+	}
+
+	6% {
+		transform: translate(20px);
+	}
+
+	8% {
+		transform: translate(-20px);
+	}
+
+	10% {
+		transform: translate(20px);
+	}
+
+	12% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+#refresh-btn {
+	font-size: 1rem;
+	align-self: center;
+	margin-top: 1.87rem;
+	padding: 0.5rem 0 0.5rem;
+	width: 150px;
+	height: auto;
+	text-align: center;
+	background-color: #533b4d;
+	color: #fae3c6;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#refresh-btn:hover {
+	background-color: #f564a9;
+	color: black;
+	transform: scale(1.1);
+}
+
+.slot.win {
+	background-color: black;
+	/* animation: roll 3s alternate; */
+	transform: rotate(180deg);
+	/* transition-timing-function: 1s; */
+}
+
+@keyframes roll {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.colum {
+	border-left: 0.2em solid #1b9aaa;
+	/*stands for 3px*/
+	display: inline-block;
+	margin: -3px;
+	height: auto;
+	width: 100px;
+}
+
+.slot {
+	display: flex;
+	height: 90px;
+	width: 90px;
+	justify-content: center;
+	align-items: center;
+}
+
+.hole {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: #fae3c6;
+}
+
+.player1 .hole {
+	background-color: #bb206b;
+}
+
+.player2 .hole {
+	background-color: #533b4d;
+}
+
+.modal {
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	left: 39%;
+	width: 400px;
+	height: 150px;
+	border-radius: 15px;
+	background-color: #bcc3be;
+	;
+	transform: translateY(-300%);
+}
+
+.modal-text {
+	padding-top: 10%;
+	font-size: 30px;
+	font-weight: bolder;
+	color: white;
+}
+
+.modal.win {
+	transform: translateY(1%);
+	transition-property: transform;
+	transition-delay: 0.7s;
+	transition-duration: 2s;
+}
+
+footer {
+	color: #533b4d;
+	text-align: center;
+	padding-top: 1.5rem;
+}
+
+footer:before {
+	content: "";
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	border-top: 2px solid #533b4d;
+}
